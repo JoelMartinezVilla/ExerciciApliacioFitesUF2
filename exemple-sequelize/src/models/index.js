@@ -25,10 +25,6 @@ Categoria.belongsToMany(Video, { through: 'videos_categories', foreignKey: 'cate
 Video.belongsToMany(LlistaReproduccio, { through: 'videos_llistes_reproduccio', foreignKey: 'video_id' });
 LlistaReproduccio.belongsToMany(Video, { through: 'videos_llistes_reproduccio', foreign_key: 'llista_reproduccio_id' });
 
-// Relació 1:N entre Youtuber i LlistaReproduccio
-Youtuber.hasMany(LlistaReproduccio, { foreignKey: 'youtuber_id' })
-LlistaReproduccio.belongsTo(Youtuber, { foreignKey: 'llista_reproduccio_id' });
-
 module.exports = {
   Youtuber,
   PerfilYoutuber,
